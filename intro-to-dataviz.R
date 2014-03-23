@@ -23,5 +23,5 @@ data_female <- subset(as.data.frame(data), gender == "f")
 mean(data_female$age)
 mean(data_female$salary)
 
-scatterPlot = hPlot(x = "salary", y = "age", groups = c("gender"), data = data, type = "scatter")
+scatterPlot = hPlot(x = "age", y = "salary", groups = c("gender"), data = data, type = "scatter")
 scatterPlot

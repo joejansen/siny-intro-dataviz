@@ -11,7 +11,8 @@ framework: impressjs
 
 --- .slide x:-1000 y:-1500
 
-<q>all presentations materials can be found at github.com/joejansen/</q>
+<q>all presentations materials can be found at</q>
+github.com/joejansen/siny-intro-dataviz
 
 
 --- .slide x:0 y:-1500
@@ -55,16 +56,18 @@ https://www.betterment.com/blog/2014/03/19/portfolio-diversification/
 
 --- .slide x:6000 y:-1500
 
-<q>lets make one  
+<q>lets make 1 or 2
 </q>
 
 --- .slide x:-1000 y:1500
 
 <q>resources</q>
+* #dataviz on twitter
 * d3.js
 * rCharts
 * rMaps
 * Shiny
+* leaflet.js
 
 --- .slide x:0 y:1500
 
