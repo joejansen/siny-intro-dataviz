@@ -1,3 +1,4 @@
+#packages to install for this repository
 install.packages("devtools")
 require(devtools)
 
@@ -9,7 +10,18 @@ require(slidifyLibraries)
 require(rCharts)
 
 
-hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex == "Male")
-n2 <- nPlot(Freq ~ Hair, group = 'Eye', data = hair_eye_male, type = 'multiBarChart')
+#look at our data for gender, age, salary
+data <- read.csv("data.csv", header = TRUE, sep = ",")
+mean(data$age)
+mean(data$salary)
 
-n2
+data_male <- subset(as.data.frame(data), gender == "m")
+mean(data_male$age)
+mean(data_male$salary)
+
+data_female <- subset(as.data.frame(data), gender == "f")
+mean(data_female$age)
+mean(data_female$salary)
+
+scatterPlot = hPlot(x = "salary", y = "age", groups = c("gender"), data = data, type = "scatter")
+scatterPlot
