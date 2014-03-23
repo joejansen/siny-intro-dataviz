@@ -1,0 +1,41 @@
+<!doctype html>
+<head>
+<meta charset=utf-8 />
+<title>Loading markers from CSV</title>
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+
+
+<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.0.1/leaflet-omnivore.min.js'></script>
+<div id='map'></div>
+<script>
+var map = L.mapbox.map('map', 'examples.map-20v6611k')
+    .setView([41, -105.0], 5);
+// var map = L.mapbox.map('map');
+// var stamenLayer = L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png', {
+//   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+// }).addTo(map);
+// map.setView([37, -95.0], 5);
+
+// omnivore will AJAX-request this file behind the scenes and parse it:
+// note that there are considerations:
+// - The CSV file must contain latitude and longitude values, in column
+//   named roughly latitude and longitude
+// - The file must either be on the same domain as the page that requests it,
+//   or both the server it is requested from and the user's browser must
+//   support CORS.
+omnivore.csv('mil.csv').addTo(map);
+</script>
+
+
+</body>
+</html>

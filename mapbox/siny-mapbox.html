@@ -1,0 +1,108 @@
+<!doctype html>
+<head>
+<meta charset=utf-8 />
+<title>Our customers</title>
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+
+<style>
+  body { margin:0; padding:0; background-image: url("https://d1jflg30d72u4e.cloudfront.net/wp-content/themes/superstar/images/paper_tile.jpg"); color:#002D56;}
+  #map { width:100%; height:550px;}
+  .map-intro{
+  	text-align: center;
+  	font-family: 'Lato' sans-serif;
+  	margin:45px;
+  }
+  .cust-num{
+  	font-size: 90px;
+  	font-weight: 100;
+  	margin:10px;
+    color:#197b30;
+  }
+  h1, h2, h3{
+  	font-weight: 300;
+  	margin:20px;
+  }
+  .button, .blog_sidebar .jetpack_subscription_widget {
+display: inline-block;
+padding: 5px;
+min-width: 200px;
+margin:10px;
+zoom: 1;
+color: white;
+text-decoration: none;
+text-shadow: 0 -1px 0 #333333;
+filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#40FF5815', endColorstr='#40000000');
+background-color: #c73900;
+background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 88, 21, 0.25)), color-stop(100%, rgba(0, 0, 0, 0.25)));
+background-image: -webkit-linear-gradient(rgba(255, 88, 21, 0.25), rgba(0, 0, 0, 0.25));
+background-image: -moz-linear-gradient(rgba(255, 88, 21, 0.25), rgba(0, 0, 0, 0.25));
+background-image: -o-linear-gradient(rgba(255, 88, 21, 0.25), rgba(0, 0, 0, 0.25));
+background-image: linear-gradient(rgba(255, 88, 21, 0.25), rgba(0, 0, 0, 0.25));
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+-ms-border-radius: 3px;
+-o-border-radius: 3px;
+border-radius: 3px;
+-moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(72, 20, 0, 0.5), inset 0 1px 1px 1px rgba(255, 215, 199, 0.75), inset 0 -1px 1px 1px rgba(0, 0, 0, 0.5);
+-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(72, 20, 0, 0.5), inset 0 1px 1px 1px rgba(255, 215, 199, 0.75), inset 0 -1px 1px 1px rgba(0, 0, 0, 0.5);
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(72, 20, 0, 0.5), inset 0 1px 1px 1px rgba(255, 215, 199, 0.75), inset 0 -1px 1px 1px rgba(0, 0, 0, 0.5);
+color: white;
+text-shadow: 0 -1px 0 #333333;
+text-decoration: none;
+border: 0;
+position: relative;
+font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+font-size: 22px;
+font-weight: 700;
+line-height: 1.9em;
+white-space: nowrap;
+text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="map-intro">
+	<h1>Better investing for
+	<span class="cust-num">31,125</span>
+	customers.</h1>
+</div>
+<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.0.1/leaflet-omnivore.min.js'></script>
+<div id='map'></div>
+<div class="map-intro">
+<h1>Betterment is the online financial advisor trusted by the most customers.</h1>
+<h3>102 have joined in the past 24 hours. Thanks.</h3>
+	<a class="button" href="https://www.betterment.com/signup">Try us out</a>
+</div>
+<script>
+var map = L.mapbox.map('map', 'examples.map-20v6611k')
+    .setView([37, -95.0], 4);
+
+// var icon = L.icon({
+// 	iconUrl: 'marker-icon.png',
+// 	iconRetinaUrl: 'marker-icon-2x.png',
+// 	iconSize: [38, 95],
+// 	iconAnchor: [22, 94],
+// 	popupAnchor: [-3, -76]
+// 	// shadowUrl: 'my-icon-shadow.png',
+// 	// shadowRetinaUrl: 'my-icon-shadow@2x.png',
+// 	// shadowSize: [68, 95],
+// 	// shadowAnchor: [22, 94]
+// });    
+
+// omnivore will AJAX-request this file behind the scenes and parse it:
+// note that there are considerations:
+// - The CSV file must contain latitude and longitude values, in column
+//   named roughly latitude and longitude
+// - The file must either be on the same domain as the page that requests it,
+//   or both the server it is requested from and the user's browser must
+//   support CORS.
+omnivore.csv('subset-cust-geo.csv').addTo(map);
+</script>
+
+
+</body>
+</html>
